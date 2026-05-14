@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog posts by Biprodip." />
+  <title>Blog | Biprodip</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="navbar-brand" href="index.html">Biprodip</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        Toggle navigation
+      </button>
+      <ul class="nav-menu" id="site-menu">
+        <li><a href="index.html">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a class="active" href="blog.html">blog</a></li>
+        <li><button class="search-trigger" type="button" aria-haspopup="dialog">ctrl k</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container page">
+    <h1>Blog</h1>
+    <p class="subtitle">Notes on projects, learning, and software development.</p>
+
+    <section class="blog-post" id="first-post">
+      <p class="post-date">May 14, 2026</p>
+      <h2>Starting this portfolio</h2>
+      <p>
+        This site began as a simple GitHub Pages placeholder and is now a
+        portfolio with dedicated pages for projects and writing. The structure is
+        intentionally small: HTML for content, CSS for presentation, and a tiny
+        JavaScript file for the mobile navigation.
+      </p>
+      <p>
+        Keeping the site static makes it easy to deploy, fast to load, and simple
+        to maintain as new projects are added.
+      </p>
+    </section>
+
+    <section class="blog-post" id="building-in-public">
+      <p class="post-date">May 2026</p>
+      <h2>Building in public</h2>
+      <p>
+        Public projects are useful because they create a record of learning.
+        Even small projects can show how a developer thinks: how they structure
+        code, explain tradeoffs, and improve a rough idea over time.
+      </p>
+      <p>
+        This blog will collect short notes from that process: what worked, what
+        changed, and what I want to try next.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Copyright 2026 Biprodip. Hosted by GitHub Pages.</p>
+    </div>
+  </footer>
+  <div class="search-dialog" role="dialog" aria-modal="true" aria-label="Site search" hidden>
+    <div class="search-panel">
+      <button class="search-close" type="button" aria-label="Close search">&times;</button>
+      <label for="site-search">Search</label>
+      <input id="site-search" type="search" placeholder="Type a page or project name" />
+      <ul class="search-results" aria-label="Search results"></ul>
+    </div>
+  </div>
+</body>
+</html>
