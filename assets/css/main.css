@@ -46,6 +46,9 @@ a:focus {
 }
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   border-bottom: 1px solid var(--global-divider-color);
   background: var(--global-bg-color);
 }
@@ -285,6 +288,28 @@ ul {
   margin-top: 0;
 }
 
+.cv-section {
+  margin-bottom: 34px;
+}
+
+.cv-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-list li {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.cv-date {
+  color: var(--global-text-color-light);
+  font-size: 14px;
+}
+
 .site-footer {
   background: var(--global-footer-bg-color);
   color: var(--global-footer-text-color);
@@ -401,5 +426,10 @@ ul {
 
   .entry-thumb {
     width: 100%;
+  }
+
+  .cv-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 }

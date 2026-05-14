@@ -8,6 +8,7 @@ const searchTriggers = document.querySelectorAll(".search-trigger");
 
 const searchIndex = [
   { title: "about", url: "index.html", text: "homepage introduction interests" },
+  { title: "cv", url: "cv.html", text: "education experience skills resume" },
   { title: "projects", url: "projects.html", text: "selected work portfolio apps automation" },
   { title: "blog", url: "blog.html", text: "posts notes writing learning" },
   { title: "personal portfolio website", url: "projects.html#portfolio", text: "github pages html css javascript" },
