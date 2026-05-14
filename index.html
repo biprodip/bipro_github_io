@@ -3,43 +3,492 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My CI/CD HTML Site</title>
+  <meta
+    name="description"
+    content="Portfolio website for Biprodip: projects, experience, writing, and contact links."
+  />
+  <title>Biprodip | Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root {
+      color-scheme: light;
+      --bg: #fbfaf7;
+      --paper: #ffffff;
+      --ink: #202124;
+      --muted: #5f6368;
+      --line: #dedbd2;
+      --accent: #246b68;
+      --accent-strong: #174b49;
+      --soft: #eef5f4;
+      --code: #8f4d23;
+      --shadow: 0 16px 40px rgba(32, 33, 36, 0.08);
     }
 
-    .container {
-      margin-top: 100px;
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-strong);
+      text-decoration: underline;
+    }
+
+    .site {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 28px 56px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: 0 -28px 48px;
+      border-bottom: 1px solid rgba(222, 219, 210, 0.85);
+      background: rgba(251, 250, 247, 0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 16px 28px;
+      font-family: Arial, sans-serif;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+      text-transform: lowercase;
+    }
+
+    main {
+      display: grid;
+      gap: 44px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 44px;
+      align-items: start;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
     }
 
     h1 {
-      color: #1f2937;
+      margin-bottom: 6px;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1;
+      letter-spacing: 0;
     }
 
-    p {
-      color: #4b5563;
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
       font-size: 18px;
+      letter-spacing: 0;
+      text-transform: lowercase;
     }
 
-    .badge {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 18px;
-      background: #2563eb;
-      color: white;
+    h2::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
+
+    h3 {
+      margin-bottom: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .intro {
+      max-width: 700px;
+      font-size: 19px;
+    }
+
+    .portrait {
+      min-height: 240px;
+      border: 1px solid var(--line);
       border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(36, 107, 104, 0.12), rgba(143, 77, 35, 0.08)),
+        var(--paper);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      font-family: Arial, sans-serif;
+    }
+
+    .portrait-inner {
+      display: grid;
+      place-items: center;
+      height: 100%;
+      min-height: 202px;
+      border: 1px dashed rgba(36, 107, 104, 0.35);
+      border-radius: 6px;
+      color: var(--accent-strong);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+      font-family: Arial, sans-serif;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--paper);
+      padding: 8px 12px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .quick-links a:hover {
+      border-color: rgba(36, 107, 104, 0.45);
+      background: var(--soft);
+      text-decoration: none;
+    }
+
+    .section-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .item p {
+      margin-bottom: 10px;
+      color: #34373b;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .chips li {
+      border: 1px solid rgba(36, 107, 104, 0.22);
+      border-radius: 999px;
+      background: var(--soft);
+      padding: 3px 9px;
+      color: var(--accent-strong);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .skill-group {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 18px;
+    }
+
+    .skill-group h3 {
+      color: var(--code);
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .skill-group p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .site {
+        padding: 0 20px 40px;
+      }
+
+      header {
+        margin: 0 -20px 36px;
+      }
+
+      nav {
+        display: grid;
+        gap: 12px;
+        padding: 14px 20px;
+      }
+
+      .nav-links {
+        gap: 14px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero,
+      .item,
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        gap: 24px;
+      }
+
+      .portrait {
+        min-height: 180px;
+      }
+
+      .portrait-inner {
+        min-height: 142px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Hello!</h1>
-    <p>This page is under construction.</p>
+  <div class="site">
+    <header>
+      <nav aria-label="Primary navigation">
+        <a class="brand" href="#top">Biprodip</a>
+        <ul class="nav-links">
+          <li><a href="#about">about</a></li>
+          <li><a href="#projects">projects</a></li>
+          <li><a href="#experience">experience</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="about" aria-labelledby="intro-title">
+        <div>
+          <h1 id="intro-title">Biprodip</h1>
+          <p class="tagline">Software developer building practical, reliable web experiences.</p>
+          <div class="intro">
+            <p>
+              Hello! I am a developer interested in clean interfaces, dependable
+              systems, and tools that make everyday work easier. This portfolio is
+              a home for selected projects, experience, and notes as my work grows.
+            </p>
+            <p>
+              I enjoy turning ideas into working products, learning new technologies,
+              and refining the small details that make software feel thoughtful.
+            </p>
+          </div>
+          <div class="quick-links" aria-label="Profile links">
+            <a href="https://github.com/biprodip">GitHub</a>
+            <a href="mailto:hello@example.com">Email</a>
+            <a href="#projects">Selected work</a>
+          </div>
+        </div>
+        <aside class="portrait" aria-label="Profile summary">
+          <div class="portrait-inner">
+            Portfolio<br />
+            Web Development<br />
+            Projects
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">selected projects</h2>
+        <div class="section-grid">
+          <article class="item">
+            <div class="meta">GitHub Pages</div>
+            <div>
+              <h3>Personal Portfolio</h3>
+              <p>
+                A responsive personal website hosted on GitHub Pages, designed to
+                present projects, experience, and contact links in a simple academic
+                portfolio style.
+              </p>
+              <ul class="chips">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>GitHub Pages</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="meta">Project</div>
+            <div>
+              <h3>Web Application</h3>
+              <p>
+                Replace this entry with one of your strongest apps: describe the
+                problem, your role, the technical stack, and the outcome in two or
+                three clear sentences.
+              </p>
+              <ul class="chips">
+                <li>JavaScript</li>
+                <li>API</li>
+                <li>UI</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="meta">Project</div>
+            <div>
+              <h3>Automation or Data Tool</h3>
+              <p>
+                Use this space for a practical script, dashboard, analysis project,
+                or internal tool that shows how you solve real problems with code.
+              </p>
+              <ul class="chips">
+                <li>Python</li>
+                <li>Data</li>
+                <li>Automation</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">experience</h2>
+        <div class="section-grid">
+          <article class="item">
+            <div class="meta">Now</div>
+            <div>
+              <h3>Developer and Learner</h3>
+              <p>
+                Building portfolio projects, improving full-stack fundamentals, and
+                practicing production habits such as version control, deployment,
+                testing, and documentation.
+              </p>
+            </div>
+          </article>
+
+          <article class="item">
+            <div class="meta">Focus</div>
+            <div>
+              <h3>Areas of Interest</h3>
+              <p>
+                Web development, cloud deployment, automation, data workflows, and
+                user interfaces that are fast, readable, and easy to maintain.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="skills-title">
+        <h2 id="skills-title">skills</h2>
+        <div class="skills">
+          <article class="skill-group">
+            <h3>Frontend</h3>
+            <p>HTML, CSS, JavaScript, responsive layouts, accessible UI patterns.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Backend</h3>
+            <p>APIs, scripting, databases, authentication, server-side fundamentals.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Tools</h3>
+            <p>Git, GitHub Pages, CI/CD basics, documentation, deployment workflows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">contact</h2>
+        <p>
+          The best place to find my current work is
+          <a href="https://github.com/biprodip">GitHub</a>. You can also reach me at
+          <a href="mailto:hello@example.com">hello@example.com</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Biprodip. Hosted on GitHub Pages.</span>
+    </footer>
   </div>
 </body>
 </html>
