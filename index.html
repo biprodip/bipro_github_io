@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Biprodip's portfolio, projects, and blog." />
   <title>Biprodip</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
   <link rel="stylesheet" href="assets/css/main.css" />
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -16,41 +24,70 @@
         Toggle navigation
       </button>
       <ul class="nav-menu" id="site-menu">
-        <li><a class="active" href="index.html">about</a></li>
-        <li><a href="cv.html">cv</a></li>
-        <li><a href="projects.html">projects</a></li>
-        <li><a href="blog.html">blog</a></li>
-        <li><button class="search-trigger" type="button" aria-haspopup="dialog">ctrl k</button></li>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="container page">
-    <section class="about">
-      <h1>Biprodip</h1>
-      <p class="subtitle">hello [at] example.com, I build useful things for the web.</p>
+    <section class="about profile-layout">
+      <div class="profile-copy">
+        <p>Greetings!</p>
 
-      <p>Greetings!</p>
+        <p class="bio-lead">
+          With over 10 years of experience in AI/ML research and development, I
+          improve decentralised collaborative multi-agent, multi-robot, and
+          multi-client AI/ML technologies to make them reliable under uncertainty,
+          including uncertainty arising from distribution shift, heterogeneous
+          collaboration, and asynchronous communication.
+        </p>
 
-      <p>
-        I am Biprodip, a software developer interested in practical web
-        applications, clean user interfaces, automation, and reliable deployment
-        workflows. This website is a small home for my projects, notes, and
-        ongoing learning.
-      </p>
+        <p class="bio-lead">
+          In collaboration with leading organisations such as CSIRO, I have a
+          proven track record of improving multi-client AI systems by designing
+          mathematically grounded deep learning pipelines to tackle drift. My
+          recent work and collaborations focus on improving the reliability and
+          scalability of LLM/VLM-based collaborative AI agents for multimodal
+          data, including RAG systems. My work is supported by expertise in
+          PyTorch, FastAPI, AWS, Docker, LangChain, LangGraph, LangSmith, MLOps
+          practices, and HPC clusters for efficient multi-GPU training.
+        </p>
 
-      <p>My current interests include:</p>
-      <ul>
-        <li>Responsive web applications and portfolio sites</li>
-        <li>Backend APIs, scripting, and automation</li>
-        <li>Cloud deployment, CI/CD, and GitHub Pages workflows</li>
-      </ul>
+        <p class="bio-lead">
+          Across my career, I have built AI solutions across diverse data
+          modalities, including text, tabular, sensor, image, CT scan, MRI, and
+          LiDAR data, while tackling real-world challenges such as data imbalance,
+          cold-start recommendation, explainability, and adversarial attacks. I
+          enjoy teamwork in uncovering flaws in state-of-the-art algorithms,
+          mathematical modelling, and developing proof-of-concept solutions to
+          support algorithm design and decision-making. Beyond technical work, I
+          love exploring the latest developments in AI/ML, data science, and
+          software development. I contribute through mentoring, project
+          supervision, and cross-sector research collaboration, with a commitment
+          to reliable AI and real-world impact.
+        </p>
+      </div>
 
-      <p>
-        I enjoy turning ideas into working software, improving the small details
-        that make an interface pleasant to use, and writing down what I learn as
-        I build.
-      </p>
+      <aside class="profile-card" aria-label="Profile links">
+        <div class="profile-photo" aria-label="Profile picture"></div>
+        <div class="social-icons">
+          <a href="mailto:hello@example.com" aria-label="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://scholar.google.com/" aria-label="Google Scholar">
+            <i class="ai ai-google-scholar" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/biprodip" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        </div>
+      </aside>
     </section>
 
     <section class="home-section">
@@ -130,19 +167,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>
-        © Copyright 2026 Biprodip. Powered by GitHub Pages. Inspired by the
-        al-folio academic portfolio style.
-      </p>
+      <p>© Copyright 2026 Biprodip. Hosted by GitHub Pages.</p>
     </div>
   </footer>
-  <div class="search-dialog" role="dialog" aria-modal="true" aria-label="Site search" hidden>
-    <div class="search-panel">
-      <button class="search-close" type="button" aria-label="Close search">&times;</button>
-      <label for="site-search">Search</label>
-      <input id="site-search" type="search" placeholder="Type a page or project name" />
-      <ul class="search-results" aria-label="Search results"></ul>
-    </div>
-  </div>
 </body>
 </html>
